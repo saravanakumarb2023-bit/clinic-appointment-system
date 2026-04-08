@@ -15,3 +15,12 @@ spec:
       containers:
         - name: clinic-app
           image: sar0234/clinic-app:latest
+          imagePullPolicy: Always
+
+          # 🔥 IMPORTANT (keeps container alive)
+          stdin: true
+          tty: true
+
+          # Optional (if you later convert to API)
+          ports:
+            - containerPort: 8080
